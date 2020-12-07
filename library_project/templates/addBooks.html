@@ -1,0 +1,21 @@
+{% load static %}
+
+<html>
+    <head>
+        <h2>Add Books Issued</h2>
+        <h4><a href="{% url 'mainpage' %}">Go To MainPage</a></h4>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/addBooks.css' %}" />
+    </head>
+    <body>
+        <div id="field">
+            <fieldset class="field1">
+                <form method="post">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <input type="submit" value="Update" />
+                </form>
+
+            </fieldset>
+        </div>
+    </body>
+</html>

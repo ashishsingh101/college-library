@@ -1,0 +1,33 @@
+{% load static %}
+
+<html>
+    <head>
+        <h1>college library</h1>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/mainpage.css' %}" />
+    </head>
+    <body>
+        <fieldset class="group1">
+            <h3><a href="{% url 'search' %}">Search for Student</a></h3>
+
+            <h3><a href="{% url 'create' %}">Add New Details</a></h3>
+
+            <div id="field">
+            <form method="post">
+                {% csrf_token %}
+                <label>Search Roll No. to Update Books</label><br/>
+                <input type="number" name="roll" placeholder="enter roll no...">
+                <button>Search</button>
+            </form>
+            </div>
+            {% if student %}
+            {%for ele in student%}
+                <h3><a href="{% url 'addBooks' ele.pk %}">Update For Roll No. {{ele.rollNo}}</a></h3>
+            {%endfor%}
+            {% endif %}
+            {% if not student %}
+                <h3>Student With Roll No. {{roll}} Does Not Exists</h3>
+            {%endif%}
+        </fieldset><br/>
+
+    </body>
+</html>

@@ -1,0 +1,37 @@
+h2 {
+    color : white;
+    background-color: rgb(113, 37, 163);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    border: 1.5px solid white;
+}
+
+body {
+    background-color: black;
+}
+
+h4 a {
+    color: red;
+}
+h4 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#field {
+    background-color:purple;
+    border: 1.5px solid white;
+    border: 1.5px;
+    padding: 40px;
+}
+
+.field1 {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}

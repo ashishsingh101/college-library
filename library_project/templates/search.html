@@ -1,0 +1,38 @@
+{% load static %}
+
+<html>
+    <head>
+        <h2>search by roll number</h1>
+        <h4><a href="{% url 'mainpage' %}">Go To MainPage</a></h4>
+        
+        <link type="text/css" rel="stylesheet" href="{% static 'css/search.css' %}" />
+    </head>
+    <body>
+        <div id="field">
+        <fieldset class="field1">
+            <form method="post">
+                {% csrf_token %}
+                <label>Search Roll No.</label><br/>
+                <input type="number" name="roll" placeholder="enter roll no...">
+                <button>Search</button>
+            </form><br/>
+
+        </fieldset><br/>
+
+        <fieldset class="field2">
+            {% if student %}
+                {% for ele in student %}
+                    <li>Name : {{ele.name}}</li>
+                    <li>Roll No. : {{ele.rollNo}}</li>
+                    <li>Branch : {{ele.branch}}</li>
+                    <li>Phone No. : {{ele.phoneNo}}</li>
+                    <li>YearOfStudy : {{yearofstudy}}</li>
+                {% endfor %}
+            {%else%}
+                <p>student detail with roll no. {{rollno}} not found !</p>
+                
+            {%endif%}
+        </fieldset>
+        </div>
+    </body>
+</html>

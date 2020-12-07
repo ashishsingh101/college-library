@@ -1,0 +1,17 @@
+{% load static %}
+
+<html>
+    <head>
+        <h2>create student record</h1>
+        <h4><a href="{% url 'mainpage' %}">MainPage</a></h4>
+        <link type="text/css" rel="stylesheet" href="{% static 'css/create.css' %}" />
+    </head>
+    <body>
+        <form class="form" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="save" type="submit" value="save" >
+        </form>
+    </body>
+
+</html>
